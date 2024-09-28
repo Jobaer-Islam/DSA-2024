@@ -5,10 +5,16 @@ public class P9_PrintPowerofX {
         if (n == 1) {
             return x;
         }
-        return x * power(x, n-1);
+        int halfpow = power(x, n / 2);
+        if (n % 2 != 0) {
+            //odd
+            return x * halfpow * halfpow;
+        }
+        //even
+        return halfpow * halfpow;
     }
     public static void main(String[] args) {
-        System.out.println(power(2, 10));
+        System.out.println(power(5, 3));
 
     }
 }
